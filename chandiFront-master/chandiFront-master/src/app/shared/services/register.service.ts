@@ -28,6 +28,13 @@ export class RegisterService {
     });
   }
 
+  viewDoctorDetails(id){
+    console.log(id);
+    return this.http.post("http://localhost:3000/doctor/viewdoctor",id,{
+      headers:this.headers
+    });
+  }
+
 }
 
 

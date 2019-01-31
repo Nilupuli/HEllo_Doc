@@ -58,7 +58,7 @@ export class Register3Component implements OnInit {
             addNo :credentials.addNo,
             addStreet:credentials.addStreet,
             addCity:credentials.addCity,
-            roleId :"004"
+            roleId :"002"
         }
 
         console.log(user)

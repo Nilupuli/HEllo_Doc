@@ -143,6 +143,7 @@ router.post("/login",function(req,res,next){
                         console.log(user[0])
                         res.json({
                             state: true,
+                            email: username,
                             token: 'JWT ' + token,
                             role:user[0].roleId
                           });

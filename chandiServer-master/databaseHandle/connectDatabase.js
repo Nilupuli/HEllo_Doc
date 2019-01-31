@@ -169,6 +169,16 @@ module.exports.addMlt = function(data , callback){
        con.query(tableSchema.tables.role.getUser + mysql.escape(roleId),callback);
    }
 
+   module.exports.searchPatient = function(NIC,callback){
+    console.log(NIC,"mkmkkjkjkjkjkjkjkjk");
+    con.query(tableSchema.tables.patient.getUser+ mysql.escape(NIC),callback);
+   }
+
+   module.exports.doctorDetails = function(id,callback){
+       console.log(email,"sdvsdv");
+       con.query(tableSchema.tables.doctor.getUser + mysql.escape(id),callback)
+   }
+
 
 
 

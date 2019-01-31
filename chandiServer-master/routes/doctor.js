@@ -30,4 +30,16 @@ router.post("/addDoctor", function (req, res) {
     });
 })
 
+router.post('/viewdoctor',function(req,res){
+    console.log(req)
+    database.doctorDetails(req,function(err,result){
+
+        if(err){
+            console.log(err)
+        }else{
+            res.json(result);
+        }
+    })
+})
+
 module.exports = router;
