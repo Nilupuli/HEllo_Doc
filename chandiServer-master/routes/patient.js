@@ -4,10 +4,15 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/jwt');
 const database = require('../databaseHandle/connectDatabase');
+var randomstring = require("randomstring");
 
 router.post("/addPatient", function (req, res) {
 
+    var patientId = randomstring.generate(7);
+
+
     const patientData = [
+        patientId,
         req.body.patientId,
         req.body.dob,
         req.body.occupation,

@@ -15,7 +15,7 @@ export class AuthService {
 
     register(user){
         console.log(user);
-        return this.http.post("http://blooming-dusk-12909/register", {user});
+        return this.http.post("http://localhost:3000/users/addUsers", {user});
     }
 
     // login(user){

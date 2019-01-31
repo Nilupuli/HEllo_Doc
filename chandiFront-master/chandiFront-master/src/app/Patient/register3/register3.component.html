@@ -1,79 +1,75 @@
-<!--
-Author: Colorlib
-Author URL: https://colorlib.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>SignUp Form</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- Custom Theme files -->
-	<link href="src\app\Doctor\register2\register2.component.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- //Custom Theme files -->
-	<!-- web font -->
-	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-	<!-- //web font -->
-</head>
-
-<body>
-	<!-- main -->
-	<div class="main-w3layouts wrapper">
-		<h1> SignUp Form</h1>					
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-					<input class="text" type="text" name="firstName" placeholder="Firstname" required="" formControlName="firstName"><br>
-					<input class="text" type="text" name="lastName" placeholder="Lastname" required="" formControlName="lastName">
-					<input class="text email" type="email" name="email" placeholder="Email" required="" formControlName="email">
-					<input class="number" type="text" name="Contactnumber" placeholder="Contact Number" required="" formControlName="mobile"><br>
-					<input class="text" type="text" name="NIC" placeholder="NIC" required="" formControlName="nic"><br>
-					<input class="text" type="text" name="address" placeholder="Address" required="" formControlName="address"><br>
-					<input class="text" type="text" name="weight" placeholder="Weight(KG)" required="" formControlName="weight"><br>
-					<input class="text" type="text" name="height" placeholder="Heigh(cm)" required="" formControlName="height"><br>
-					<input class="text" type="text" name=" bloodType" placeholder="Blood Type" required="" formControlName="bloodType"><br>
-					<input class="text" type="text" name=" maritalState" placeholder="Marital State (Yes/No)" required="" formControlName="maritalState"><br>
-					<input class="text" type="text" name=" occupation" placeholder="Occupation" required="" formControlName="occupation"><br>
-					<input class="text" type="text" name="dob" placeholder="Date of Birth" required="" formControlName="dob">
+<br>
+<br>
+<div>
+    <mat-card class="sign">
 
 
-					<input class="text w3lpass" type="password" name="password" placeholder="Password" required="" formControlName="password">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="" formControlName="cpassword">
-					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
-					<input type="submit" value="SIGNUP">
-				</form>
-				<p>Don't have an Account? <a href=""> Login Now!</a></p>
-			</div>
-		</div>
-		<!-- copyright -->
-		<div class="colorlibcopy-agile">
-			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
-		</div>
-		<!-- //copyright -->
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	<!-- //main -->
-</body>
+            <form class = "form-login" #f="ngForm" (ngSubmit)="logIn(f.value)" [formGroup]="form">
+                <mat-card-header>
+              <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                </mat-card-header><br>
 
-</html>
+                <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+                <div *ngIf="validLogin" class="alert alert-danger">Login Sucess.</div>
+              <label for="Email">Email address</label>
+              <input
+                 formControlName="email"
+                 type="email"
+                 id="inputEmail"
+                 ngModel class="form-control"
+                 placeholder="Email address">
+                 <div *ngIf = "form.get('email').touched && form.get('email').invalid"class="alert alert-danger">
+                 <span *ngIf="form.hasError('email', 'email')&&form.get('email').touched">
+                   This email not valid.
+                  </span>
+                  Enter the E-mail
+                </div>
+              <br>
+              <label for="inputPassword">Password</label>
+              <input
+              formControlName="password"
+              type="password"
+              id="inputPassword"
+              ngModel class="form-control"
+              placeholder="Password">
+              <div *ngIf = "form.get('password').touched" class = "alert alert-danger">
+                Enter the password
+              </div><br>
+
+              <label>
+                <input type="radio" value="005" formControlName="role">
+                  <span>Admin</span>
+              </label>
+              <label>
+                <input type="radio" value="001" formControlName="role">
+                  <span>Doctor</span>
+              </label>
+              <label>
+                <input type="radio" value="002" formControlName="role">
+                  <span>Patient</span>
+              </label>
+              <label>
+                <input type="radio" value="004" formControlName="role">
+                  <span>Front-Desk</span>
+              </label>
+              <label>
+                <input type="radio" value="003" formControlName="role">
+                  <span>MLT</span>
+              </label>
+              <br>
+              <br>
+              
+              
+
+
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+             
+            </form>
+
+            <!-- <button (click)="createContact()"></button> -->
+
+
+      </mat-card>
+</div>
+
+

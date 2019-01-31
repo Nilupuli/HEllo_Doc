@@ -2,6 +2,7 @@ const mysql = require('mysql');
 const conDetails = require('../config/database');
 const tableSchema = require('./tableSchema');
 const bcrypt = require('bcryptjs');
+var randomstring = require("randomstring");
 
 // create database connection
 const con = mysql.createConnection(conDetails.conDetails);
