@@ -156,11 +156,16 @@ module.exports.addMlt = function(data , callback){
    module.exports.comparePassword = function(password,hash,callback){
 
     bcrypt.compare(password,hash,function(err,isMatch){
-        console.log(hash,"iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+        //console.log(hash,"iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
         if(err) throw err;
 
         callback(null, isMatch);
     })
+   }
+
+   module.exports.selectRole = function(roleId,callback){
+       //console.log(roleId,"sdfghjk")
+       con.query(tableSchema.tables.role.getUser + mysql.escape(roleId),callback);
    }
 
 

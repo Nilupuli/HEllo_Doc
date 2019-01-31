@@ -48,7 +48,7 @@ const routes: Routes = [
   {path:'registerm', component:RegistermComponent}, 
   {path:'makeapp', component:MakeappComponent}, 
   {path:'histroy', component:HistroyComponent}, 
-  {path:'udate', component:UpdateComponent}, 
+  {path:'update', component:UpdateComponent}, 
   {path:'sdoctor', component:SDoctorComponent}, 
 
   

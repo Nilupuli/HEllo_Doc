@@ -6,7 +6,7 @@ const tables = {
             "roleName	varchar(20)," +
             "CONSTRAINT pk_role PRIMARY KEY (roleId))",
         adduser: "INSERT INTO role (roleId,roleName) VALUE ?",
-        getUser: "SELECT * FROM role where ?"
+        getUser: "SELECT roleId FROM role where roleId = "
 
     },
 

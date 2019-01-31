@@ -113,6 +113,7 @@ router.post("/login",function(req,res,next){
     // console.log(req,"cfvgbnvgbhnj")
     const username = req.body.email;
     const password = req.body.password;
+    const roleid = req.body.role;
 
    // console.log(username,password,"xcvbn");
     database.selectUser(username,function(err,user){
@@ -125,15 +126,34 @@ router.post("/login",function(req,res,next){
                 res.json({ success: false, msg: 'Wrong password' });
             }else{
                 database.comparePassword(password,user[0].password,function(err,isMatch){
-                    console.log(password,user[0].password,'7777777777777777777777777')
+                   // console.log(password,user[0].password,'7777777777777777777777777')
                     if(err){
                         throw err;
                     }
                     if(isMatch){
-                        console.log(user[0].password,"dfghjkkkkkkkkkkkkkkkkkkkk");
+                       // console.log(user[0].password,"dfghjkkkkkkkkkkkkkkkkkkkk");
+                       //const token = jwt.sign(toObject())
+                      // console.log(roleid);
+                       database.selectRole(roleid,function(err,roleid){
+                           console.log(roleid);
+                        const token = jwt.sign(toObject(user),config.secret,{
+                            expiresIn:604800
+                        })
+                        console.log(user[0])
+                        res.json({
+                            state: true,
+                            token: 'JWT ' + token,
+                            role:user[0].roleId
+                          });
+                           
+                       }) 
+
+
+
                     }
                     else{
-                        console.log("qwertyuiopqawsedrftgyhujikzxdcfgvbhnjsxdcbgyhunjse");
+                       // console.log("qwertyuiopqawsedrftgyhujikzxdcfgvbhnjsxdcbgyhunjse");
+                       res.json({ state: false, msg: 'Wrong password' });
                     }
                 })
             }
@@ -147,3 +167,11 @@ router.post("/login",function(req,res,next){
 
 
 module.exports = router;
+
+
+function toObject(user){
+    return{
+        UserID: user[0].email,
+    }
+}
+

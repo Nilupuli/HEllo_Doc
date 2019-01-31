@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { resource } from 'selenium-webdriver/http';
 
 
 @Component({
@@ -43,34 +44,47 @@ let contact  = {
   // )
   };
 
-logIn(credentials){
-  console.log(credentials)
-  this.authService.login(credentials)
-    .subscribe(result => {
-
-      console.log(result);
-      // if(result)
-      //   this.validLogin=true;
-      // else
-      //   this.invalidLogin= true;
-    })
-
-    }
-
-
 
   ngOnInit() {
   }
 
 
+  logIn(credentials){
+    console.log(credentials)
+    this.authService.login(credentials)
+      .subscribe(result =>{
+        if(result.json().state){
 
-
+          //console.log(result.json().token)
+          localStorage.setItem('token',result.json().token);
+          this.selectProfile(result.json())
+        }
+        else{
+          alert("Login Failed..")
+        }
+        
+      })
   
+      }
 
+    selectProfile(role){
+      console.log(role.role)
+      if(role.role === '005'){
+          this._router.navigate(['update']);
+        }
+      else if(role.role === '004'){
+        this._router.navigate(['payment']);
+      }  
+      else if(role.role === '003'){
+        this._router.navigate(['mbasic']);
+      } 
+      else if(role.role === '002'){
+        this._router.navigate(['patientprofile']);
+      } 
+      else if(role.role === '001'){
+        this._router.navigate(['searchp']);
+      } 
 
-
-
-
-
+      }
 
 }
