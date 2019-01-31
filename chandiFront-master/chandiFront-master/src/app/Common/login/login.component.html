@@ -6,8 +6,8 @@
 
             <form class = "form-login" #f="ngForm" (ngSubmit)="logIn(f.value)" [formGroup]="form">
                 <mat-card-header>
-              <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
-                </mat-card-header>
+              <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+                </mat-card-header><br>
 
                 <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
                 <div *ngIf="validLogin" class="alert alert-danger">Login Sucess.</div>
@@ -34,7 +34,8 @@
               placeholder="Password">
               <div *ngIf = "form.get('password').touched" class = "alert alert-danger">
                 Enter the password
-              </div>
+              </div><br>
+
               <label>
                 <input type="radio" value="005" formControlName="role">
                   <span>Admin</span>
@@ -56,9 +57,13 @@
                   <span>MLT</span>
               </label>
               <br>
+              <br>
+              
+              
+
 
               <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-              <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+             
             </form>
 
             <!-- <button (click)="createContact()"></button> -->
