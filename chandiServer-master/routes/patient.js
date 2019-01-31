@@ -13,7 +13,6 @@ router.post("/addPatient", function (req, res) {
 
     const patientData = [
         patientId,
-        req.body.patientId,
         req.body.dob,
         req.body.occupation,
         req.body.bloodType,
@@ -24,6 +23,7 @@ router.post("/addPatient", function (req, res) {
        
     ]
     database.addPatient(patientData, function (err, result) {
+        console.log(patientData,"qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq");
         if (err) {
             console.log(err);
             if(err.sqlState =="23000"){

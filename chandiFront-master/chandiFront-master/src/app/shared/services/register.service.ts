@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http'
 import { map } from 'rxjs/operators';
 
 
@@ -12,6 +12,9 @@ export class RegisterService {
     private http: Http
   ) { }
 
+  private headers = new Headers({'content-Type':'application/json'});
+  private option = new RequestOptions({headers:this.headers});
+
   docRegister(user: any) {
     console.log(user);
     return this.http.post("http://localhost:3000/doctor/addDoctor", user ).pipe(map(res => 
@@ -20,8 +23,9 @@ export class RegisterService {
 
   patientRegister(user:any){
     console.log(user);
-    return this.http.post("http://localhost:3000/patient/addPatient",user).pipe(map(res => 
-      console.log(res.json())));
+    return this.http.post("http://localhost:3000/patient/addPatient",user,{
+      headers:this.headers
+    });
   }
 
 }

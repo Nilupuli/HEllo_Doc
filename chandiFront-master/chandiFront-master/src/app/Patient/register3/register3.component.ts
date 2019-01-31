@@ -20,14 +20,24 @@ export class Register3Component implements OnInit {
 
 
         form = new FormGroup({
-            email: new FormControl('',[
-              Validators.required,
-              Validators.email
-            ]),
-            password: new FormControl('',[
-              Validators.required]),
-            role: new FormControl('') 
-        
+
+            NIC: new FormControl('',[Validators.required]),
+            firstName: new FormControl('',[Validators.required]),
+            lastName: new FormControl('',[Validators.required]),
+            email: new FormControl('',[Validators.required,Validators.email]),
+            password: new FormControl('',[Validators.required]),
+            role: new FormControl(''), 
+            addNo: new FormControl('',[Validators.required]),
+            contactNo: new FormControl('',[Validators.required]),
+            addStreet: new FormControl('',[Validators.required]),
+            addCity: new FormControl('',[Validators.required]),
+            dob: new FormControl('',[Validators.required]),
+            occupation: new FormControl('',[Validators.required]),
+            bloodType: new FormControl('',[Validators.required]),
+            maritalState: new FormControl('',[Validators.required]),
+            height: new FormControl('',[Validators.required]),
+            weight: new FormControl('',[Validators.required]),
+            
           })
 
    
@@ -37,9 +47,55 @@ export class Register3Component implements OnInit {
     }
 
     logIn(credentials){
-        console.log(credentials)
+
+        const user = {
+            NIC:credentials.NIC,
+            firstName : credentials.firstName,
+            lastName : credentials.lastName,
+            contactNo :credentials.contactNo,
+            email : credentials.email,
+            password :credentials.password,
+            addNo :credentials.addNo,
+            addStreet:credentials.addStreet,
+            addCity:credentials.addCity,
+            roleId :"004"
+        }
+
+        console.log(user)
+
+      const patient = {
+        
+        dob:credentials.dob,
+        occupation:credentials.occupation,
+        bloodType:credentials.bloodType,
+        maritalState:credentials.maritalState,
+        height:credentials.height,
+        weight:credentials.weight,
+        NIC:credentials.NIC,
+      }  
+       
+      this.authService.register(user)
+      .subscribe(result =>{
+          console.log(result.json())
+        if(result.json().success){
+            this.regPatient.patientRegister(patient)
+            .subscribe(result =>{
+                console.log(result,"vvgvgvg")
+                if(result.json().success){
+                    window.alert("patient add");
+                }
+                else{
+                    window.alert("somthing going wrong");
+                }
+              })
+        }
+        else{
+          alert("Login Failed..")
+        }
+        
+      })
       
-          }
+    }
 
 
 

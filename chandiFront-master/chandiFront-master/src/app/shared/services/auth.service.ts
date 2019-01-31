@@ -14,8 +14,10 @@ export class AuthService {
     private option = new RequestOptions({headers:this.headers});
 
     register(user){
-        console.log(user);
-        return this.http.post("http://localhost:3000/users/addUsers", {user});
+        console.log(user,"oooooooooooooooooooooooooooo");
+        return this.http.post("http://localhost:3000/users/addUsers", user,{
+            headers:this.headers 
+        });
     }
 
     // login(user){

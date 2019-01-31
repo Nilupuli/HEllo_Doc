@@ -26,6 +26,7 @@ router.post("/addUsers", function (req, res) {
     ]
 
     database.addUsers(usersData, function (err, result) {
+        console.log(usersData,"ppppppppppppppppp")
         if (err) {
             console.log(err);
             if(err.sqlState =="23000"){
