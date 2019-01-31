@@ -9,9 +9,19 @@ import { Router } from '@angular/router';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private _router:Router) { }
+  ngOnInit() { 
   }
+
+  moveToDoctorRegister(){
+    this._router.navigate(['/register2']);
+  }
+
+   
+  moveToMLTRegister(){
+    this._router.navigate(['/registerm']);
+    
+  }
+
 
 }

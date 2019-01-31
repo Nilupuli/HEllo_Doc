@@ -44,6 +44,7 @@ import {MatCardModule} from '@angular/material/card';
 
 import { AuthService } from './shared/services/auth.service';
 import { HttpModule } from '@angular/http';
+import { SearchComponent } from './FrontDesk/search/search.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { HttpModule } from '@angular/http';
     HistroyComponent,
     SDoctorComponent,
     UpdateComponent,
+    SearchComponent,
   ],
 
   imports: [

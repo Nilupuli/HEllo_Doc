@@ -21,6 +21,9 @@ import { MakeappComponent } from './Patient/makeapp/makeapp.component';
 import { HistroyComponent } from './Patient/histroy/histroy.component';
 import { SDoctorComponent } from './Patient/sdoctor/sdoctor.component';
 import {UpdateComponent } from './Admin/update/update.component';
+import {SearchComponent } from './FrontDesk/search/search.component';
+
+
 
 
 
@@ -50,6 +53,9 @@ const routes: Routes = [
   {path:'histroy', component:HistroyComponent}, 
   {path:'udate', component:UpdateComponent}, 
   {path:'sdoctor', component:SDoctorComponent}, 
+  {path:'search', component:SearchComponent},
+  {path:'update', component:UpdateComponent}, 
+ 
 
   
   
