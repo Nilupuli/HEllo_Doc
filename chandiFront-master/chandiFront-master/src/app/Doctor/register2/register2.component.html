@@ -1,74 +1,219 @@
-<!--
-Author: Colorlib
-Author URL: https://colorlib.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
+<br>
+<br>
+<div>
+    	<mat-card class="sign">
+				<form class = "form-login" #f="ngForm" (ngSubmit)="logIn(f.value)" [formGroup]="form">
+				
+						<mat-card-header>
+								<h1 class="h3 mb-3 font-weight-normal">Login</h1>
+						</mat-card-header><br>
+								  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+								  <div *ngIf="validLogin" class="alert alert-danger">Login Sucess.</div>
 
-<head>
-	<title>SignUp Form</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- Custom Theme files -->
-	<link href="src\app\Doctor\register2\register2.component.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- //Custom Theme files -->
-	<!-- web font -->
-	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-	<!-- //web font -->
-</head>
+								  <label for="NIC">NIC</label>
+								  <input
+									 formControlName="NIC"
+									 type="text"
+									 id="inputNIC"
+									 ngModel class="form-control"
+									 placeholder="NIC">
+									 <div *ngIf = "form.get('NIC').touched && form.get('NIC').invalid"class="alert alert-danger">
+									 <span *ngIf="form.hasError('NIC', 'NIC')&&form.get('NIC').touched">
+									   This NIC not valid.
+									  </span>
+									  Enter the NIC
+									</div>
+								  <br>
 
-<body>
-	<!-- main -->
-	<div class="main-w3layouts wrapper">
-		<h1> SignUp Form</h1>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
-					<input class="text" type="text" name="firstName" placeholder="Firstname" required="" formControlName="firstName"><br>
-					<input class="text" type="text" name="lastName" placeholder="Lastname" required="" formControlName="lastName">
-					<input class="text email" type="email" name="email" placeholder="Email" required="" formControlName="email">
-					<input class="number" type="text" name="Contactnumber" placeholder="Contact Number" required="" formControlName="mobile"><br>
-					<input class="text" type="text" name="NIC" placeholder="NIC" required="" formControlName="nic"><br>
-					<input class="text" type="text" name="WorkAddress" placeholder="WorkAddress" required="" formControlName="wordAddress"><br>
-					<input class="text" type="text" name="Doctor Register Number" placeholder="Doctor Reg No" required="" formControlName="docRegNumber"><br>
-					<input class="text" type="text" name="Doctor fileld ID" placeholder="Doctor Fileld" required="" formControlName="docField"><br>
-					<input class="text" type="text" name=" Designation" placeholder="Designation" required="" formControlName="designation">
-					<input class="text w3lpass" type="password" name="password" placeholder="Password" required="" formControlName="password">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="" formControlName="cpassword">
-					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>I Agree To The Terms & Conditions</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
-					<input type="submit" value="SIGNUP">
-				</form>
-				<p>Don't have an Account? <a href=""> Login Now!</a></p>
-			</div>
-		</div>
-		<!-- copyright -->
-		<div class="colorlibcopy-agile">
-			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
-		</div>
-		<!-- //copyright -->
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	<!-- //main -->
-</body>
+								  <label for="doctorRegNo">Register Number</label>
+								  <input
+									  formControlName="doctorRegNo"
+									  type="text"
+									  id="doctorRegNo"
+									  ngModel class="form-control"
+									  placeholder="Register Number">
+									  <div *ngIf = "form.get('doctorRegNo').touched && form.get('doctorRegNo').invalid"class="alert alert-danger">
+											<span *ngIf="form.hasError('doctorRegNo', 'doctorRegNo')&&form.get('doctorRegNo').touched">
+											  Register Number Not Valid
+											 </span>
+											 Enter Register No.
+										   </div>
+								   <br>
 
-</html>
+								   <label for="doctorDesignation">Designation</label>
+								   <input
+									   formControlName="doctorDesignation"
+									   type="text"
+									   id="doctorDesignation"
+									   ngModel class="form-control"
+									   placeholder="Designation">
+									<br>
+									<div *ngIf = "form.get('doctorDesignation').touched && form.get('doctorDesignation').invalid"class="alert alert-danger">
+											<span *ngIf="form.hasError('doctorDesignation', 'doctorDesignation')&&form.get('doctorDesignation').touched">
+											 Designation Not Valid
+											 </span>
+											 Designation Register No.
+										   </div>
+
+									<label for="workAddress">Work Address</label>
+									<input
+										formControlName="workAddress"
+										type="text"
+										id="workAddress"
+										ngModel class="form-control"
+										placeholder="Designation">
+									 <br>
+									 <div *ngIf = "form.get('workAddress').touched && form.get('workAddress').invalid"class="alert alert-danger">
+											<span *ngIf="form.hasError('workAddress', 'workAddress')&&form.get('workAddress').touched">
+											 Work Address Not Valid
+											 </span>
+											 Work Address Register No.
+										   </div>
+
+										   <label for="doctorField">Doctor Field</label>
+										   <input
+											   formControlName="doctorField"
+											   type="text"
+											   id="doctorField"
+											   ngModel class="form-control"
+											   placeholder="Designation">
+											<br>
+											<div *ngIf = "form.get('workAddress').touched && form.get('workAddress').invalid"class="alert alert-danger">
+												   <span *ngIf="form.hasError('workAddress', 'workAddress')&&form.get('workAddress').touched">
+													Work Address Not Valid
+													</span>
+													Work Address Register No.
+												  </div>
+
+
+								  <label for="firstName">First Name</label>
+										<input
+										   formControlName="firstName"
+										   type="text"
+										   id="inputfirstName"
+										   ngModel class="form-control"
+										   placeholder="First Name">
+										   <div *ngIf = "form.get('firstName').touched && form.get('firstName').invalid"class="alert alert-danger">
+										   <span *ngIf="form.hasError('firstName', 'firstName')&&form.get('firstName').touched">
+											 Not valid
+											</span>
+											Enter the First Name
+										  </div>
+										<br>
+
+									<label for="lastName">Last Name </label>
+												<input
+												   formControlName="lastName"
+												   type="text"
+												   id="inputlastName"
+												   ngModel class="form-control"
+												   placeholder="Last Name">
+												   <div *ngIf = "form.get('lastName').touched && form.get('lastName').invalid"class="alert alert-danger">
+												   <span *ngIf="form.hasError('lastName', 'lastName')&&form.get('lastName').touched">
+													 Not valid
+													</span>
+													Enter the Last Name
+												  </div>
+												<br>
+
+												<label for="email">E-mail</label>
+												<input
+												   formControlName="email"
+												   type="email"
+												   id="inputemail"
+												   ngModel class="form-control"
+												   placeholder="E-Mail">
+												   <div *ngIf = "form.get('email').touched && form.get('email').invalid"class="alert alert-danger">
+												   <span *ngIf="form.hasError('email', 'email')&&form.get('email').touched">
+													 Not valid
+													</span>
+													Enter the E-Mail
+												  </div>
+												<br>
+
+												<label for="contactNo">Contact No</label>
+												<input
+												   formControlName="contactNo"
+												   type="contactNo"
+												   id="contactNo"
+												   ngModel class="form-control"
+												   placeholder="contactNo">
+												   <div *ngIf = "form.get('contactNo').touched && form.get('contactNo').invalid"class="alert alert-danger">
+												   <span *ngIf="form.hasError('contactNo', 'contactNo')&&form.get('contactNo').touched">
+													 Not valid
+													</span>
+													Enter the Contact-No
+												  </div>
+												<br>
+
+												<label for="inputPassword">Password</label>
+												<input
+												formControlName="password"
+												type="password"
+												id="inputPassword"
+												ngModel class="form-control"
+												placeholder="Password">
+												<div *ngIf = "form.get('password').touched && form.get('password').invalid" class = "alert alert-danger">
+												  Enter the password
+												</div><br>
+
+												<label for="addNo">Address No</label>
+												<input
+												   formControlName="addNo"
+												   type="text"
+												   id="inputaddNo"
+												   ngModel class="form-control"
+												   placeholder="addNo">
+												<br>
+								
+												<label for="addStreet">Street Name</label>
+												<input
+												   formControlName="addStreet"
+												   type="text"
+												   id="addStreet"
+												   ngModel class="form-control"
+												   placeholder="Add Street">
+												<br>
+
+												
+				<label for="addCity">City Name</label>
+				<input
+					formControlName="addCity"
+					type="text"
+					id="addCity"
+					ngModel class="form-control"
+					placeholder="Add City">
+				 <br>
+
+
+	
+	
+
+	
+
+	
+
+
+	
+				  <!-- <label for="nic">NIC</label>
+				 <input
+					 formControlName="NIC"
+					 type="text"
+					 id="NIC"
+					 ngModel class="form-control"
+					 placeholder="Add City">
+				  <br> -->
+				 
+				  <br>
+				  <br>
+	
+
+
+
+
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+             
+				</form>	
+
+		</mat-card>
+</div>
