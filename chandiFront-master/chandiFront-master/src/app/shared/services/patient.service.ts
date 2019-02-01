@@ -14,17 +14,19 @@ export class PatientService {
     private option = new RequestOptions({headers:this.headers});
     url = "https://hello-doc-app.herokuapp.com";
     
-    login(user){
-        console.log(user);
-        return this.http.post(`${this.url}/users/login`,user,{
-            headers:this.headers
-        });
-    }
+    
     addBasicInfo(data){
         console.log(data)
         return this.http.post(`${this.url}/patient/addpatientbasichealthinfo`, data,{
             headers: this.headers
         });
+    }
+
+    getPatientData(email){
+        console.log(email.value)
+        return this.http.post(`${this.url}/patient/profile`, email,{
+            headers: this.headers
+        })
     }
 
 }

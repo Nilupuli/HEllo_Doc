@@ -18,7 +18,7 @@
             <div class="col-md-6">
                 <div class="profile-head">
                     <h5>
-                        Thanuja Sandeepani
+                        {{name}}
                     </h5>
                     <h6>
                         Cardiac electrophysiologist.
@@ -54,12 +54,12 @@
                             <div class="col-lg-12">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                        <input type="text" class="form-control search-slt" placeholder="Enter Patient ID">
+                                        <input #patientId type="text" class="form-control search-slt" placeholder="Enter Patient ID">
                                     </div>
 
 
                                     <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                        <button type="button" class="btn btn-danger wrn-btn">Search</button>
+                                        <button type="button" class="btn btn-danger wrn-btn" (click)="getPatientData(patientId)">Search</button>
                                     </div>
                                 </div>
                             </div>
@@ -76,46 +76,46 @@
              
               <tr>
                 <th scope="row">Patient ID:</th>
-                <td>value</td>
+                <td>{{email}}</td>
                 
               </tr>
               <tr>
                 <th scope="row"> Name:</th>
-                <td>value</td>
+                <td>{{name}}</td>
               </tr>  
               <tr>
                 <th scope="row">Address:</th>
-                <td>value</td>
+                <td>{{address}}</td>
                 
               </tr>
               <tr>
                 <th scope="row">Conatct Number:</th>
-                <td>value</td>
+                <td>{{contactNo}}</td>
               </tr>  
               <tr>
                 <th scope="row">Date Of Birth:</th>
-                <td>value</td>
+                <td>{{dateOfBirth}}</td>
               </tr>  
               <tr>
                 <th scope="row">Occupation:</th>
-                <td>value</td>
+                <td>{{occupation}}</td>
               </tr>
               <tr>
                 <th scope="row">Marital State:</th>
-                <td>value</td>
+                <td>{{maritalState}}</td>
               </tr>  
               <tr>
                 <th scope="row">Blood Group:</th>
-                <td>value</td>
+                <td>{{bloodGroup}}</td>
               </tr>  
               <tr>
                 <th scope="row">Blood Suger:</th>
-                <td>value</td>
+                <td>{{bloodSugar}}</td>
                 
               </tr>
               <tr>
                 <th scope="row">Blood Presure:</th>
-                <td>value</td>
+                <td>{{bloodPresure}}</td>
               </tr>   
 
               <tr>
@@ -125,11 +125,11 @@
                 
                 <tr>
                     <th scope="row">Weight:</th>
-                    <td>value</td>
+                    <td>{{weight}}</td>
                   </tr>   
                   <tr>
                     <th scope="row">Height:</th>
-                    <td>value</td>
+                    <td>{{height}}</td>
                   </tr>   
 
                    
@@ -137,11 +137,11 @@
                     
                       <tr>
                         <th scope="row">Cholestrol:</th>
-                        <td>value</td>
+                        <td>{{cholestrol}}</td>
                       </tr> 
                       <tr>
                         <th scope="row">Allergy:</th>
-                        <td>value</td>
+                        <td>{{allergy}}</td>
                       </tr>    
 
             </tbody>
