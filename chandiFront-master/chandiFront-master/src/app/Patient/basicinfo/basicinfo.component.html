@@ -56,63 +56,41 @@ box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
             <div>
           
                 <br>
+                <form [formGroup]="form1" (ngSubmit)="onSubmit(form1)">
                 <table class="table table-hover">
                   
                   <tbody>
-                   
-                    <tr>
-                      <th scope="row">Patient ID:</th>
-                      <td>value</td>
-                      
-                    </tr>
                     <tr>
                       <th scope="row">Date:</th>
-                      <td>value</td>
+                      <td><input formControlName="currentDate" type="text" placeholder="YYYY-MM-DD"></td>
                     </tr>
                     <tr>
                       <th scope="row">cholestorol:</th>
-                      <td>value</td>
+                      <td><input formControlName="cholestorol" type="text" name="cholestorol"></td>
                       
                     </tr>
                     <tr>
                       <th scope="row">Allergies:</th>
-                      <td>value</td>
+                    <td><input formControlName="allergy" type="text" name="allergies"></td>
                     </tr>
                     <tr>
                       <th scope="row">Blood Suger:</th>
-                      <td>value</td>
+                      <td><input formControlName="bloodSugar" type="text" name=""></td>
                       
                     </tr>
                     <tr>
                       <th scope="row">Blood Presure:</th>
-                      <td>value</td>
+                      <td><input formControlName="bloodPresure" type="text" name="blood_preasure"></td>
                     </tr>   
     
                     <tr>
                         <th scope="row">Social Disease:</th>
-                        <td>value</td>
-                      </tr> 
-                      
-                      <tr>
-                          <th scope="row">Weight:</th>
-                          <td>value</td>
-                        </tr>  
-                        <tr>
-                          <th scope="row">Height:</th>
-                          <td>value</td>
-                        </tr>   
-    
-                        <tr>
-                            <th scope="row">Marital state:</th>
-                            <td>value</td>
-                          </tr>   
-    
-                          <tr>
-                              <th scope="row">Blood Group:</th>
-                              <td>value</td>
-                            </tr>   
+                        <td><input formControlName="socialDisease" type="text" name="social_disease"></td>
+                      </tr>    
                   </tbody>
                 </table>
+                <button mdbBtn type="submit">Add</button>
+              </form>
               </div>
             
           </div>
