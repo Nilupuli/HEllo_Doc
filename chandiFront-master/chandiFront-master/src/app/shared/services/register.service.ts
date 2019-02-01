@@ -16,8 +16,8 @@ export class RegisterService {
   private headers = new Headers({'content-Type':'application/json'});
   private option = new RequestOptions({headers:this.headers});
 
- // url = "https://hello-doc-app.herokuapp.com";
-    url = "http://localhost:3000"
+ url = "https://hello-doc-app.herokuapp.com";
+    // url = "http://localhost:3000"
 
   docRegister(user: any) {
     console.log(user);
