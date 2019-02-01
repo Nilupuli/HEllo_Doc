@@ -27,6 +27,10 @@ export class SearchmComponent implements OnInit {
     this._router.navigate(['/rectest']);
     
   }
+
+  moveToPdetails(){
+    this._router.navigate(['/pdetails']);
+  }
   
   
   }
