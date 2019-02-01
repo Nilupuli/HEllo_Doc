@@ -20,11 +20,11 @@
                 <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Login</a>
             </li>
            <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/user']" routerLinkActive="active">Doctor Profile</a>
+            <a class="nav-link" [routerLink]="['/user']" routerLinkActive="active" (click)="removeToken()">Log Out</a>
             </li>
                  
           
-          
+<!--           
                        <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/patientprofile']" routerLinkActive="active">Patient Profile</a>
             </li>
@@ -44,7 +44,7 @@
                 <a class="nav-link" [routerLink]="['/update']" routerLinkActive="active">Admin</a>
             </li>
 
-           
+            -->
 
 
         </ul>

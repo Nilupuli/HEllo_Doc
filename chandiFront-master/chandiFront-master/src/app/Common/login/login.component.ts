@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { resource } from 'selenium-webdriver/http';
+// import { jwtDecode } from 'jwt-decode';
+// import { jwt } from 'jsonwebtoken';
 
 
 @Component({
@@ -11,6 +13,8 @@ import { resource } from 'selenium-webdriver/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  msg = null
 
   constructor(
     private _router: Router,
@@ -50,7 +54,7 @@ let contact  = {
 
 
   logIn(credentials){
-    console.log(credentials)
+    // console.log(credentials)
     this.authService.login(credentials)
       .subscribe(result =>{
         if(result.json().state){
@@ -58,7 +62,13 @@ let contact  = {
           //console.log(result.json().token)
           localStorage.setItem('token',result.json().token);
           localStorage.setItem('email',result.json().email);
-          console.log(result.json().email);
+          // this.msg = result.json().msg;
+          // var user = JSON.parse(result.json().msg)
+          // console.log(user)
+          // var decodeUser = jwt.decode(result.json().token)
+          // console.log(jwtDecode(result.json().token), )
+          // localStorage.setItem('loggedUser', result.json().msg);
+          // console.log(localStorage.getItem('loggedUser'));
           this.selectProfile(result.json())
         }
         else{

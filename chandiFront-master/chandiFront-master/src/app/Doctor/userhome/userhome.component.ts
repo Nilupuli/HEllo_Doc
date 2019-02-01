@@ -8,9 +8,17 @@ import { Router } from '@angular/router';
 })
 export class UserhomeComponent implements OnInit {
 
+  userId:''
+  name:''
+  email:''
+  phone:''
+  profession:''
+
   constructor(private _router:Router) { }
 
   ngOnInit() {
+    // var userData = localStorage.getItem('loggedUser');
+    // console.log(userData)
   }
   moveToViewPatient(){
     this._router.navigate(['/searchp']);
