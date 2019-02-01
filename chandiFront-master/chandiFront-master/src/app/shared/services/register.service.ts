@@ -16,8 +16,8 @@ export class RegisterService {
   private headers = new Headers({'content-Type':'application/json'});
   private option = new RequestOptions({headers:this.headers});
 
-  //url : "https://hello-doc-app.herokuapp.com";
-  url = "http://localhost:3000"
+ // url = "https://hello-doc-app.herokuapp.com";
+    url = "http://localhost:3000"
 
   docRegister(user: any) {
     console.log(user);
@@ -43,8 +43,22 @@ export class RegisterService {
   }
 
   viewDoctorDetails(id){
-    console.log(id);
-    return this.http.post(`${this.url}/doctor/viewdoctor`,id,{
+    
+    const data = {
+      email : id,
+    }
+    console.log(data,"nhnnn");
+    return this.http.post(`${this.url}/doctor/profile`,data,{
+      headers:this.headers
+    });
+  }
+
+  viewPatientDetails(id){
+    const data = {
+      email : id,
+    }
+    console.log(data,"nhnnn");
+    return this.http.post(`${this.url}/patient/profile`,data,{
       headers:this.headers
     });
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegisterService } from '../../shared/services/register.service';
 
 import { Router } from '@angular/router';
 @Component({
@@ -8,9 +9,16 @@ import { Router } from '@angular/router';
 })
 export class PatientprofileComponent implements OnInit {
 
-  constructor(private _router:Router) { }
+  constructor(private _router:Router,
+    private _services : RegisterService,) { }
 
   ngOnInit() { 
+
+    const id  = localStorage.getItem('email');
+    this._services.viewPatientDetails(id)
+    .subscribe(res=>console.log(res))
+
+
   }
 
   moveToBasicHealthInfo(){
