@@ -45,6 +45,8 @@ import {MatCardModule} from '@angular/material/card';
 import { AuthService } from './shared/services/auth.service';
 import { HttpModule } from '@angular/http';
 import { SearchComponent } from './FrontDesk/search/search.component';
+import { AddprescriptionComponent } from './Doctor/addprescription/addprescription.component';
+import { AppdateComponent } from './Patient/appdate/appdate.component';
 
 
 @NgModule({
@@ -72,6 +74,8 @@ import { SearchComponent } from './FrontDesk/search/search.component';
     SDoctorComponent,
     UpdateComponent,
     SearchComponent,
+    AddprescriptionComponent,
+    AppdateComponent,
   ],
 
   imports: [

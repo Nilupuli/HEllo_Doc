@@ -1,12 +1,9 @@
-<br>
-<br>
+<body>
 <div>
     	<mat-card class="sign">
 				<form class = "form-login" #f="ngForm" (ngSubmit)="logIn(f.value)" [formGroup]="form">
-				
-						<mat-card-header>
-								<h1 class="h3 mb-3 font-weight-normal">Login</h1>
-						</mat-card-header><br>
+						<h3>Patient Registration</h3>
+					<br>
 								  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
 								  <div *ngIf="validLogin" class="alert alert-danger">Login Sucess.</div>
 
@@ -131,7 +128,7 @@
 					 type="text"
 					 id="dob"
 					 ngModel class="form-control"
-					 placeholder="Add City">
+					 placeholder="Add Date of Birth">
 				  <br>
 	
 				  <label for="occupation">Occupation</label>
@@ -151,18 +148,31 @@
 					 ngModel class="form-control"
 					 placeholder="Blood Type">
 				  <br>
-	
+
+				  <!-- <label>Marital State</label>
+
+<div class="custom-control custom-radio">
+	<input type="radio" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios" value="0" formControlName="maritalState">
+	<label class="custom-control-label" for="defaultUnchecked">Married</label>
+  </div>
+  
+ 
+  <div class="custom-control custom-radio">
+	<input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" value="1" formControlName="maritalState" checked>
+	<label class="custom-control-label" for="defaultChecked">Unmarried</label>
+  </div> -->
 				  <label>
 					<input type="radio" value="0" formControlName="maritalState">
 					  <span>Married</span>
 				  </label>
+				  &nbsp; &nbsp;
 				  <label>
 					<input type="radio" value="1" formControlName="maritalState">
 					  <span>Unmarried</span>
 				  </label>
-	
-	
-				  <label for="height">Height</label>
+				  <br>
+				<br>
+				  <label for="height">Height (in Meters)</label>
 				 <input
 					 formControlName="height"
 					 type="text"
@@ -171,7 +181,7 @@
 					 placeholder="Height">
 				  <br>
 	
-				  <label for="weight">Weight</label>
+				  <label for="weight">Weight (in Kilograms)</label>
 				 <input
 					 formControlName="weight"
 					 type="text"
@@ -179,7 +189,7 @@
 					 ngModel class="form-control"
 					 placeholder="Weight">
 				  <br>
-	
+					<br>
 				  <!-- <label for="nic">NIC</label>
 				 <input
 					 formControlName="NIC"
@@ -188,13 +198,6 @@
 					 ngModel class="form-control"
 					 placeholder="Add City">
 				  <br> -->
-				 
-				  <br>
-				  <br>
-	
-
-
-
 
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
              
@@ -202,3 +205,4 @@
 
 		</mat-card>
 </div>
+</body>

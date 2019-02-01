@@ -22,7 +22,10 @@ import { HistroyComponent } from './Patient/histroy/histroy.component';
 import { SDoctorComponent } from './Patient/sdoctor/sdoctor.component';
 import {UpdateComponent } from './Admin/update/update.component';
 import {SearchComponent } from './FrontDesk/search/search.component';
+import {AppdateComponent } from './Patient/appdate/appdate.component';
 
+
+import {AddprescriptionComponent } from './Doctor/addprescription/addprescription.component';
 
 
 
@@ -55,6 +58,10 @@ const routes: Routes = [
   {path:'sdoctor', component:SDoctorComponent}, 
   {path:'search', component:SearchComponent},
   {path:'update', component:UpdateComponent}, 
+  {path:'addprescription', component:AddprescriptionComponent}, 
+  {path:'appdate', component:AppdateComponent}, 
+
+
  
 
   

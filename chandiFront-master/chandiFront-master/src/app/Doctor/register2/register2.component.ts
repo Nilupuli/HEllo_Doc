@@ -6,8 +6,12 @@ import { RegisterService } from '../../shared/services/register.service'
 
 @Component({
     selector: 'register2',
-    templateUrl: 'register2.component.html'
-})
+    templateUrl: 'register2.component.html',
+    styleUrls: ['./register2.component.css']
+
+
+
+    })
 
 export class Register2Component implements OnInit {
 

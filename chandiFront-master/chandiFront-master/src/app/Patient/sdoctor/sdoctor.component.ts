@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
 })
 export class SDoctorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit() {
   }
-
+  moveToAppDate(){
+    this._router.navigate(['/appdate']);
+  }
 }

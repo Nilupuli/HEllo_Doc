@@ -38,5 +38,9 @@ export class SearchpComponent implements OnInit {
   moveToUserPage(){
     this._router.navigate(['/user']);
   }
+
+  moveToAddprescription(){
+    this._router.navigate(['/addprescription']);
+  }
   
 }
