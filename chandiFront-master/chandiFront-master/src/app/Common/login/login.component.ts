@@ -58,6 +58,7 @@ let contact  = {
           //console.log(result.json().token)
           localStorage.setItem('token',result.json().token);
           localStorage.setItem('email',result.json().email);
+          console.log(result.json().email);
           this.selectProfile(result.json())
         }
         else{

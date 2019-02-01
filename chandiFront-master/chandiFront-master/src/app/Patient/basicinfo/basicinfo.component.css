@@ -203,3 +203,8 @@ main {
   cursor: pointer;
   max-width: 100%;
 }
+
+input {
+  border: none;
+  background-color: Gainsboro;
+}
