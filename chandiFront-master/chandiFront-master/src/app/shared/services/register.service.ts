@@ -17,7 +17,7 @@ export class RegisterService {
   private option = new RequestOptions({headers:this.headers});
 
  url = "https://hello-doc-app.herokuapp.com";
-    // url = "http://localhost:3000"
+ // url = "http://localhost:3000/"
 
   docRegister(user: any) {
     console.log(user);
@@ -62,6 +62,29 @@ export class RegisterService {
       headers:this.headers
     });
   }
+
+  viewMltDetails(id){
+    
+    const data = {
+      email : id,
+    }
+    console.log(data,"nhxx");
+    return this.http.post(`${this.url}/mlt/ViewMLTProfile` ,data,{
+      headers:this.headers
+    });
+  }
+  
+  viewFrontDeskDetails(id){
+    
+    const data = {
+      email : id,
+    }
+    console.log(data,"hjkll");
+    return this.http.post(`${this.url}/frontDesk/profile`,data,{
+      headers:this.headers
+    });
+  }
+
 
 }
 

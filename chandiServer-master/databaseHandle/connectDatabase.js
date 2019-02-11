@@ -179,7 +179,20 @@ module.exports.addMlt = function(data , callback){
        con.query(tableSchema.tables.doctor.getUser + mysql.escape(id),callback)
    }
 
+   module.exports.MltDetails = function(id,callback){
+    console.log(email,"hia");
+    con.query(tableSchema.tables.mlt.getUser + mysql.escape(id),callback)
+}
 
+module.exports.FrontDeskDetails = function(id,callback){
+    console.log(email,"hjfhsk");
+    con.query(tableSchema.tables.frontDesk.getUser + mysql.escape(id),callback)
+}
+
+module.exports.patientDetails = function(id,callback){
+    console.log(email,"ght");
+    con.query(tableSchema.tables.patient.getUser + mysql.escape(id),callback)
+}
 
 
 

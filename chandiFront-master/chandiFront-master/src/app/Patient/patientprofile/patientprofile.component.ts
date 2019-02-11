@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class PatientprofileComponent implements OnInit {
 
   email:''
-  NICNo:''
+  NIC:''
   name:''
   address:''
   contactNo:''
@@ -42,7 +42,7 @@ export class PatientprofileComponent implements OnInit {
         this.occupation = res.json().msg[0].occupation
         this.maritalState = res.json().msg[0].maritalState.data
         this.bloodGroup = res.json().msg[0].bloodType
-        this.NICNo = res.json().msg[0].NIC
+        this.NIC = res.json().msg[0].NIC
         // this.bloodSugar = res.json().msg[0].name
         this.weight = res.json().msg[0].weight
         this.height = res.json().msg[0].height

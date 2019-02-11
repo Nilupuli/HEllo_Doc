@@ -1,37 +1,28 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-<div class="container emp-profile">
-    <form method="post">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
-                   
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-white profile-widget">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="image-container bg2">  
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="avatar" alt="avatar"> 
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="profile-head">
-                            <h5>
-                                Thanuja Sandeepani
-                            </h5>
-                            <h6>
-                                    Cardiac electrophysiologist.
-                            </h6>
-                            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-                            <ul class="nav nav-tabs">
+                <div class="col-sm-12">
+                    <div class="details">
+                        <div>Works at HelloDoc.com</div><br>
+                        <div class="mg-top-10">
+                              <ul class="nav nav-tabs">
                               <li class="nav-item">
                                   <button type="button" class="btn btn-secondary p" (click)="moveToUserPage()" >About</button>
                                   </li>
-                              
+                                  &nbsp;   &nbsp;
                               <li class="nav-item">
                                   <button type="button" class="btn btn-secondary p" (click)="moveToViewPatient()" >Patient List</button>
                                   </li>
 
-                                
+                                  &nbsp;  &nbsp;
                                       
                               
                               <li class="nav-item">
@@ -41,11 +32,13 @@
                                 
                                       
                           </ul>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-            <div class="col-md-2">
-              <button type="button" class="btn btn-secondary" (click)="moveToShedule()">Shedule</button>
-            </div>
+        </div>
+          
 <div class="container">
     <div class="row">
            
@@ -115,7 +108,12 @@
                             <td class="hidden-xs">978F</td>
                             <td>2019.05.12</td>
                             <td>6.00 PM</td>
-                          </tr>
+                          </tr><br>
+                          <br>
+
+                          <div class="col-md-2">
+                              <button type="button" class="btn btn-secondary" (click)="moveToShedule()">Shedule</button>
+                            </div>
                         </tbody>
                 </table>
             
@@ -124,3 +122,6 @@
             </div>
 
 </div></div></div>
+
+
+        

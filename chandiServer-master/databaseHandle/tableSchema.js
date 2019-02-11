@@ -54,7 +54,7 @@ const tables = {
             "CONSTRAINT pk_patient PRIMARY KEY (patientId)," +
             "CONSTRAINT fk_patient_users FOREIGN KEY (NIC) REFERENCES users(NIC) ON DELETE CASCADE)",
         adduser: "INSERT INTO patient(patientId,dob,occupation,bloodType,maritalState,height,weight,NIC)VALUE ?",
-        getUser: "SELECT * FROM patient where NIC ="
+        getUser: "SELECT * FROM patient where email ="
 
     },
 
@@ -187,7 +187,7 @@ const tables = {
             "dateTimeIn," +
             "dateTimeOut," +
             "doctorRegNo," +
-            " CONSTRAINT pk_appSchedule PRIMARY KEY (appScheduleId)" +
+            "CONSTRAINT pk_appSchedule PRIMARY KEY (appScheduleId)" +
             "CONSTRAINT fk_appSchedule_doctor FOREIGN KEY(doctorRegNo) REFERENCES doctor(doctorRegNo) ON DELETE CASCADE)",
 
         adduser: " INSERT INTO appSchedule(appScheduleId,noOfAppointments,dateTimeIn,dateTimeOut,doctorRegNo)VALUE ?",

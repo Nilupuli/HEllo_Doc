@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegisterService } from '../../shared/services/register.service';
+
 
 @Component({
   selector: 'app-userhome',
@@ -8,18 +10,36 @@ import { Router } from '@angular/router';
 })
 export class UserhomeComponent implements OnInit {
 
-  userId:''
   name:''
   email:''
-  phone:''
-  profession:''
+  workAddress:''
+  contactNo:''
+  NIC:''
+  doctorRegNo:''
+  doctorField:''
+  doctorDesignation:''
 
-  constructor(private _router:Router) { }
+ constructor(private _router:Router,
+ private _services : RegisterService,) { }
+ 
+ ngOnInit() {
+  const id  = localStorage.getItem('email');
+  this._services.viewDoctorDetails(id)
+  .subscribe(res=>{
+    console.log(res.json())
+    this.email = res.json().msg[0].email
+    this.name = res.json().msg[0].firstName 
+    this.workAddress = res.json().msg[0].workAddress
+    this.contactNo = res.json().msg[0].contactNo
+    this.doctorRegNo = res.json().msg[0].doctorRegNo
+    this.doctorField = res.json().msg[0].doctorField
+    this. doctorDesignation = res.json().msg[0]. doctorDesignation
+    this.NIC = res.json().msg[0].NIC
+   
 
-  ngOnInit() {
-    // var userData = localStorage.getItem('loggedUser');
-    // console.log(userData)
-  }
+  })
+}
+ 
   moveToViewPatient(){
     this._router.navigate(['/searchp']);
   }
@@ -28,6 +48,8 @@ export class UserhomeComponent implements OnInit {
     this._router.navigate(['/applist']);
   }
 
- 
+  moveToEditProfile(){
+    this._router.navigate(['/editprofile']);
+  }
 
 }

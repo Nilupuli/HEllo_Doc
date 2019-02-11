@@ -1,3 +1,4 @@
+import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../shared/services/register.service';
@@ -10,52 +11,57 @@ import { PatientService } from 'src/app/shared/services/patient.service';
   providers: [PatientService]
 })
 export class SearchpComponent implements OnInit {
-
-  email:''
-  name:''
-  address:''
-  contactNo:''
-  dateOdBirth:''
-  occupation:''
-  maritalState:''
-  bloodGroup:''
-  bloodSugar:''
-  bloodPresure:''
-  ScopedCredentialInfo:''
-  weight:''
-  height:''
-  colesterol:''
-  allergy:''
-
+  patients:any;
+  // email:''
+  // name:''
+  // address:''
+  // contactNo:''
+  // dateOfBirth:''
+  // occupation:''
+  // maritalState:''
+  // bloodGroup:''
+  // bloodSugar:''
+  // bloodPresure:''
+  // //ScopedCredentialInfo:''
+  // weight:''
+  // height:''
+  // cholesterol:''
+  // allergy:''
+form;
   constructor(
     private _router:Router,
     private _services : RegisterService,
-    private Patient: PatientService
+    private Patient: PatientService,
+    private fb:FormBuilder
     ) {
      }
 
   ngOnInit() {
-    const id  = localStorage.getItem('email');
-    this._services.viewDoctorDetails(id)
-    .subscribe(res=>{
-      console.log(res.json().msg[0])
-      this.email = res.json().msg[0].email
-      this.name = res.json().msg[0].name 
-      this.address = res.json().msg[0].addStreet
-      this.contactNo = res.json().msg[0].contactNo
-      // this.dateOdBirth = res.json().msg[0].name
-      // this.occupation = res.json().msg[0].name
-      // this.maritalState = res.json().msg[0].name
-      // this.bloodGroup = res.json().msg[0].name
-      // this.bloodPresure = res.json().msg[0].name
-      // this.bloodSugar = res.json().msg[0].name
-      // this.weight = res.json().msg[0].name
-      // this.height = res.json().msg[0].name
-      // this.colesterol = res.json().msg[0].name
-      // this.allergy = res.json().msg[0].name
-
+    this.form = this.fb.group({
+      email:['',Validators.required]
     })
+    // const id  = localStorage.getItem('email');
+    // this._services.viewPatientDetails(id)
+    // .subscribe(res=>{
+    //   console.log(res.json().msg[0])
+    //   this.email = res.json().msg[0].email
+    //   this.name = res.json().msg[0].name 
+    //   this.address = res.json().msg[0].addStreet
+    //   this.contactNo = res.json().msg[0].contactNo
+    //   this.dateOfBirth = res.json().msg[0].dob
+    //   this.occupation = res.json().msg[0].occupation
+    //   this.maritalState = res.json().msg[0].maritaState
+    //   this.bloodGroup = res.json().msg[0].bloodGroup
+    //   this.bloodPresure = res.json().msg[0].bloodPresure
+    //   this.bloodSugar = res.json().msg[0].bloodSugar
+    //   this.weight = res.json().msg[0].weight
+    //   this.height = res.json().msg[0].height
+    //   this.cholesterol = res.json().msg[0].cholesterol
+    //   this.allergy = res.json().msg[0].allergy
+
+   // })
   }
+
 
   moveToAppointmentList(){
     this._router.navigate(['/applist']);
@@ -74,11 +80,13 @@ export class SearchpComponent implements OnInit {
     this._router.navigate(['/addprescription']);
   }
 
-  getPatientData(email){
-    this.Patient.getPatientData(email)
-      .subscribe(responce => {
-        console.log(responce)
-        console.log(responce.json().msg)
+  getPatientData(form){
+    console.log(form.value,"gvbnbnhbjn")
+    this.Patient.viewPatientDetails(form.value)
+      .subscribe(response => {
+        this.patients = response.json().result[0];
+        console.log(response.json().result[0])
+        console.log(response.json().msg)
       })
   }
   

@@ -12,9 +12,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  moveToDoctorRegister(){
-    this._router.navigate(['/register2']);
-  }
+  // moveToDoctorRegister(){
+  //   this._router.navigate(['/register2']);
+  // }
 
  
 
@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit {
     this._router.navigate(['/register3']);
   }
   
-  moveToMLTRegister(){
-    this._router.navigate(['/registerm']);
-  }
+  // moveToMLTRegister(){
+  //   this._router.navigate(['/registerm']);
+  // }
   
 }

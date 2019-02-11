@@ -1,47 +1,114 @@
-<!--
-Author: Colorlib
-Author URL: https://colorlib.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html>
-<head>
-<title>SignUp Form</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="src\app\Doctor\register2\register2.component.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //Custom Theme files -->
-<!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font -->
-</head>
 <body>
-	<!-- main -->
-	<div class="main-w3layouts wrapper">
+    <div>
+          <mat-card class="sign">
+            <form class = "form-login" #f="ngForm" (ngSubmit)="logIn(f.value)" [formGroup]="form">
+                <h3>Add Prescription</h3>
+              <br>
+                      <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+                      <div *ngIf="validLogin" class="alert alert-danger">Login Sucess.</div>
+    
 
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form action="#" method="post">
-                    <input class="text" type="text" name="Prescription ID" placeholder="Prescription ID" required=""><br>
-                    <input class="text" type="text" name="Issue Date" placeholder="Issue Date" required=""><br>
-                    <input class="text" type="text" name="Expire Date" placeholder="Expire Date" required=""><br>
-                    <input class="text" type="text" name="Doctor RegNO" placeholder="Doctor Reg No" required=""><br>
-                    <input class="text" type="text" name="medicine" placeholder="Medicine" required=""><br>
-                    <input class="text" type="text" name="Quantity" placeholder="quantity" required=""><br>
-                    <input class="text" type="text" name="Dosage" placeholder="Dosage" required=""><br>
-                    <input class="text" type="text" name="email" placeholder="Medicine number" required=""><br>
-                    <input class="text" type="text" name="Recomammanded Test" placeholder="Recommanded Test" required=""><br>
-                    <input class="text" type="text" name="DiseaseID" placeholder="DiseaseID" required=""><br>
-                    <input class="text" type="text" name="Date" placeholder="Current Date" required=""><br>
-					<input type="submit" value="SUBMIT">
-				</form>
-			</div>
-		</div>
-	
-			
-	</div>
-</body>
-</html>
+                      <!--Start of form-->
+                     
+
+                      <label for="doctorRegNo">Doctor's Registration Number</label>
+                            <input
+                               formControlName="doctorRegNo"
+                               type="text"
+                               id="inputdoctorRegNo"
+                               ngModel class="form-control"
+                               placeholder="Doctor's Registration Number">
+                               <div *ngIf = "form.get('doctorRegNo').touched && form.get('doctorRegNo').invalid"class="alert alert-danger">
+                               <span *ngIf="form.hasError('doctorRegNo', 'doctorRegNo')&&form.get('doctorRegNo').touched">
+                               Registration Number is Not valid
+                              </span>
+                              Enter Doctor's Registration Number
+                              </div>
+                            <br>
+    
+                      <label for="diseaseDescription">Disease Description</label>
+                        <input
+                           formControlName="diseaseDescription"
+                           type="textarea"
+                           id="inputdiseaseDescription"
+                           ngModel class="form-control"
+                           placeholder="Disease Description">
+                           <div *ngIf = "form.get('diseaseDescription').touched && form.get('diseaseDescription').invalid"class="alert alert-danger">
+                           <span *ngIf="form.hasError('diseaseDescription', 'diseaseDescription')&&form.get('diseaseDescription').touched">
+                           Disease Description is Not valid
+                          </span>
+                          Enter Disease Description
+                          </div>
+                        <br>
+    
+                     
+    
+                            <label for="madicineName">Medicine Name</label>
+                            <input
+                               formControlName="madicineName"
+                               type="text"
+                               id="inputmadicineName"
+                               ngModel class="form-control"
+                               placeholder="Medicine Name">
+                               <div *ngIf = "form.get('madicineName').touched && form.get('madicineName').invalid"class="alert alert-danger">
+                               <span *ngIf="form.hasError('madicineName', 'madicineName')&&form.get('madicineName').touched">
+                              Medicine Name is Not valid
+                              </span>
+                              Enter Medicine Name
+                              </div>
+                            <br>
+
+                            <label for="medicineDosage">Medicine Dosage</label>
+                            <input
+                               formControlName="medicineDosage"
+                               type="text"
+                               id="inputmedicineDosage"
+                               ngModel class="form-control"
+                               placeholder="Medicine Dosage">
+                               <div *ngIf = "form.get('medicineDosage').touched && form.get('medicineDosage').invalid"class="alert alert-danger">
+                               <span *ngIf="form.hasError('medicineDosage', 'medicineDosage')&&form.get('medicineDosage').touched">
+                              Medicine Dosage is Not valid
+                              </span>
+                              Enter Medicine Dosage
+                              </div>
+                            <br>
+
+                            <label for="medicineQty">Medicine Quantity</label>
+                            <input
+                               formControlName="medicineQty"
+                               type="text"
+                               id="inputmedicineQty"
+                               ngModel class="form-control"
+                               placeholder="Medicine Quantity">
+                               <div *ngIf = "form.get('medicineQty').touched && form.get('medicineQty').invalid"class="alert alert-danger">
+                               <span *ngIf="form.hasError('medicineQty', 'medicineQty')&&form.get('medicineQty').touched">
+                              Medicine Quantity is Not valid
+                              </span>
+                              Enter Medicine Quantity
+                              </div>
+                            <br>
+    
+                            
+    
+                            <label for="recommandedTest">Recommended Test </label>
+                            <input
+                               formControlName="recommandedTest"
+                               type="text"
+                               id="recommandedTest"
+                               ngModel class="form-control"
+                               placeholder="Recommended Test">
+                               <div *ngIf = "form.get('recommandedTest').touched && form.get('recommandedTest').invalid"class="alert alert-danger">
+                               <span *ngIf="form.hasError('recommandedTest', 'recommandedTest')&&form.get('recommandedTest').touched">
+                               Recommended Test is Not valid
+                              </span>
+                              Enter Recommended Test
+                              </div>
+                            <br>
+                <!--Submit Button-->
+                <button class="btn btn-lg btn-primary btn-block" type="submit" >Save Prescription</button>
+                 
+            </form>	
+    
+        </mat-card>
+    </div>
+    </body>

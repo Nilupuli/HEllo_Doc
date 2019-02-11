@@ -15,7 +15,7 @@ export class AuthService {
     url = "https://hello-doc-app.herokuapp.com";
     //url = "http://localhost:3000"
     register(user){
-        console.log(this.url)
+        //console.log(this.url)
         console.log(user,"oooooooooooooooooooooooooooo");
         return this.http.post(`${this.url}/users/addUsers`, user,{
             headers:this.headers 

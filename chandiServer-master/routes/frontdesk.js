@@ -27,4 +27,15 @@ router.post("/addFrontdesk",function(req,res){
     });
 })
 
+router.post('/viewfrontDesk',function(req,res){
+    console.log(req)
+    database.FrontDeskDetails(req,function(err,result){
+
+        if(err){
+            console.log(err)
+        }else{
+            res.json(result);
+        }
+    })
+})
 module.exports = router;

@@ -12,8 +12,8 @@ export class PatientService {
 
     private headers = new Headers({'content-Type':'application/json'});
     private option = new RequestOptions({headers:this.headers});
-    url = "https://hello-doc-app.herokuapp.com";
-    
+    //url = "https://hello-doc-app.herokuapp.com";
+    url = "http://localhost:3000"
     
     addBasicInfo(data){
         console.log(data)
@@ -26,7 +26,18 @@ export class PatientService {
         console.log(email.value)
         return this.http.post(`${this.url}/patient/profile`, email,{
             headers: this.headers
+        });
+    }
+    viewPatientDetails(email){
+        const data = {
+            email : email,
+          }
+        return this.http.post(`${this.url}/patient/searchPatient`, data,{
+            headers: this.headers
         })
     }
 
+   ViewDetailstoMlt(email){
+    console.log(email)
+   }
 }

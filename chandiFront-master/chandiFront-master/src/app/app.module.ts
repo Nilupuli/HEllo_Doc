@@ -47,6 +47,8 @@ import { HttpModule } from '@angular/http';
 import { SearchComponent } from './FrontDesk/search/search.component';
 import { AddprescriptionComponent } from './Doctor/addprescription/addprescription.component';
 import { AppdateComponent } from './Patient/appdate/appdate.component';
+import { EditprofileComponent } from './Doctor/editprofile/editprofile.component';
+import { MltComponent } from './mlt/mlt.component';
 
 
 @NgModule({
@@ -76,9 +78,12 @@ import { AppdateComponent } from './Patient/appdate/appdate.component';
     SearchComponent,
     AddprescriptionComponent,
     AppdateComponent,
+    EditprofileComponent,
+    MltComponent,
   ],
 
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

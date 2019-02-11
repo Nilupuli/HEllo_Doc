@@ -23,6 +23,7 @@ import { SDoctorComponent } from './Patient/sdoctor/sdoctor.component';
 import {UpdateComponent } from './Admin/update/update.component';
 import {SearchComponent } from './FrontDesk/search/search.component';
 import {AppdateComponent } from './Patient/appdate/appdate.component';
+import {EditprofileComponent } from './Doctor/editprofile/editprofile.component';
 
 
 import {AddprescriptionComponent } from './Doctor/addprescription/addprescription.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
   {path:'applist', component:ApplistComponent},
   {path:'home', component:HomeComponent}, 
   {path:'calender', component:CalenderComponent}, 
-  
+  {path:'editprofile', component:EditprofileComponent}, 
   {path:'patientprofile', component:PatientprofileComponent}, 
   {path:'basicinfo', component:BasicinfoComponent}, 
   {path:'currentstate', component:CurrentstateComponent}, 

@@ -11,17 +11,16 @@ export class PrescriptionComponent implements OnInit {
 
   constructor(private _router:Router) { }
 
-  
   ngOnInit() { 
   }
 
-  moveToBasicHealthInfo(){
+  moveToBasicInfo(){
     this._router.navigate(['/basicinfo']);
   }
 
    
-  moveToPrescription(){
-    this._router.navigate(['/prescription']);
+  moveToPatientProfile(){
+    this._router.navigate(['/patientprofile']);
     
   }
 
@@ -36,21 +35,4 @@ export class PrescriptionComponent implements OnInit {
     this._router.navigate(['/lab']);
     
   }
-
-  moveToMakeAppointment(){
-    this._router.navigate(['/makeapp']);
-    
-  }
-
-  moveToPatientHome(){
-    this._router.navigate(['/patientprofile']);
-    
-  }
-
-  moveToDiseaseHistroy(){
-    this._router.navigate(['/histroy']);
-    
-  }
-
-
 }

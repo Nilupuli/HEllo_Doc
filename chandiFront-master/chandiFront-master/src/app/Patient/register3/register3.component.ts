@@ -76,7 +76,7 @@ export class Register3Component implements OnInit {
        
       this.authService.register(user)
       .subscribe(result =>{
-          console.log(result.json())
+          console.log(result.json(),"lllllllllllll")
         if(result.json().success){
             this.regPatient.patientRegister(patient)
             .subscribe(result =>{

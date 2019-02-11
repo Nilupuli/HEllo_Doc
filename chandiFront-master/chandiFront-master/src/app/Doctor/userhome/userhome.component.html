@@ -1,166 +1,113 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<div class="container emp-profile">
-    <form method="post">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                        alt="" />
-                    <div class="file btn btn-lg btn-primary">
-                        Change Photo
-                        <input type="file" name="file" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="panel panel-white profile-widget">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="image-container bg2">  
+                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="avatar" alt="avatar"> 
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="profile-head">
-                    <h5>
-                        Thanuja Sandeepani
-                    </h5>
-                    <h6>
-                        Cardiac electrophysiologist.
-                    </h6>
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-secondary q" (click)="moveToUserPage()">About</button>
-                        </li>
+                <div class="col-sm-12">
+                    <div class="details">
+                        <div>Works at HelloDoc.com</div><br>
+                        <div class="mg-top-10">
+                              <ul class="nav nav-tabs">
+                              <li class="nav-item">
+                                  <button type="button" class="btn btn-secondary p" (click)="moveToUserPage()" >About</button>
+                                  </li>
+                                  &nbsp;   &nbsp;
+                              <li class="nav-item">
+                                  <button type="button" class="btn btn-secondary p" (click)="moveToViewPatient()" >Patient List</button>
+                                  </li>
 
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-secondary p" (click)="moveToViewPatient()">Patient
-                                List</button>
-                        </li>
+                                  &nbsp;  &nbsp;
+                                      
+                              
+                              <li class="nav-item">
+                                  <button type="button" class="btn btn-secondary r" (click)="moveToAppointmentList()" >Appointment list</button>    
+                                                           </li>
 
-
-
-
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-secondary r" (click)="moveToAppointmentList()">Appointment
-                                list</button>
-                        </li>
-
-
-
-                    </ul>
+                                
+                                      
+                          </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" />
+
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="profile-work">
-                    <p>WORK Addresses</p>
-                    <a href="https://www.hemashospitals.com/thalawathugoda-hospital-hemas">Hemas
-                        Hospital.Thalawathugoda</a><br />
-                    <a href="https://www.lankahospitals.com/en/facilities/channeling-services">Lanka Channeling Center</a><br />
-                    <a href="https://www.durdans.com/durdans-appointments/">Durdans Channeling Center</a>
-                    <p>SKILLS</p>
-                    <a href="">Cardiovascular surgeon.</a><br />
-                    <a href="">Colon and rectal surgeon.</a><br />
-                    <a href="">Allergist (immunologist)</a><br />
-                    <a href="">Addiction psychiatrist</a><br />
-
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="tab-content profile-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>User Id</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Thanu123</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Name</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Thanuja Sandeepani</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Email</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>kshitighelani@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Phone</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>123 456 7890</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Profession</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Addiction psychiatrist</p>
-                            </div>
+        
+        
+            
+        
+                
+                <div class="panel panel-white border-top-purple">
+                   <div class="panel-heading">
+                        <h3 class="panel-title">My Story</h3>
+                        <div class="controls pull-right">
+                            <span class="pull-right clickable">
+                                <i class="fa fa-chevron-up"></i>
+                            </span>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Experience</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Expert</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Hourly Rate</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>10$/hr</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Total Projects</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>230</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>English Level</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Expert</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Availability</label>
-                            </div>
-                            <div class="col-md-6">
-                                <p>6 months</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label>Your Bio</label><br />
-                                <p>Your detail description</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+                    <div class="panel-body"> 
+                    
+          
+                            <br>
+                            <table class="table table-hover">
+                              
+                              <tbody>
+                                    <tr>
+                                            <th scope="row">Doctor ID:</th>
+                                            <td>{{email}}</td>
+                                            
+                                          </tr>
+                                <tr>
+                                  <th scope="row">Name:</th>
+                                  <td>{{name}}</td>
+                                  
+                                </tr>
+                               
+                                <tr>
+                                  <th scope="row">NIC:</th>
+                                  <td>{{NIC}}</td>
+                                </tr>
+                                <tr>
+                                        <th scope="row">Work Address:</th>
+                                        <td>{{workAddress}}</td>
+                                      </tr>   
+                
+                                <tr>
+                                  <th scope="row">Email:</th>
+                                  <td>{{email}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">Contact No:</th>
+                                  <td>{{contactNo}}</td>
+                                  
+                                </tr>
+                                <tr>
+                                  <th scope="row">Doctor Registration Number:</th>
+                                  <td>{{doctorRegNo}}</td>
+                                </tr>   
+                
+                                <tr>
+                                    <th scope="row">Doctor field:</th>
+                                    <td>{{doctorField}}</td>
+                                  </tr> 
+                                  
+                                  <tr>
+                                      <th scope="row">Doctor Designation:</th>
+                                      <td>{{doctorDesignation}}</td>
+                                    </tr>   
+                
+                                    
+                                   
+                              </tbody>
+                            </table>
+                          </div>
+                
+                 
+                

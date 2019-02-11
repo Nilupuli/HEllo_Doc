@@ -27,5 +27,19 @@ router.post("/addMlt",function(req,res){
     });
 })
 
+router.post('/viewmlt',function(req,res){
+    console.log(req)
+    database.MltDetails(req,function(err,result){
+
+        if(err){
+            console.log(err)
+        }else{
+            res.json(result);
+        }
+    })
+})
+
+
+
 module.exports = router;
 
